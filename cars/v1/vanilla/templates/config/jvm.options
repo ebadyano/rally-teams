@@ -46,6 +46,10 @@
 -XX:G1ReservePercent=25
 {%- endif %}
 
+{%- if use_parallel_gc is defined and use_parallel_gc == 'true' %}
+-XX:+UseParallelOldGC
+{%- endif %}
+
 ## DNS cache policy
 # cache ttl in seconds for positive DNS lookups noting that this overrides the
 # JDK security property networkaddress.cache.ttl; set to -1 to cache forever
